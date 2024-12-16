@@ -88,25 +88,26 @@ if __name__ == "__main__":
 To create a simple app with the chat widget:
 
 ```python
-import os
 import streamlit as st
 from streamlit_chat_widget import chat_input_widget
+from streamlit_extras.bottom_container import bottom #pip install streamlit_extras
 
-def app():
-    st.title("Doctor AI Assistant")
+def main():
+    st.title("My Custom Chat Application")
     
+    # Initialize chat history in Streamlit session state
     if "chat_history" not in st.session_state:
-        st.session_state.chat_history = [
-            "Hello! I am your Doctor AI Assistant. How can I help you?"
-        ]
+        st.session_state.chat_history = []
 
-    # Display chat history
+    # Display the chat history
     for message in st.session_state.chat_history:
         st.write(message)
 
     # Display the chat input widget at the bottom
-    user_input = chat_input_widget()
+    with bottom():
+        user_input = chat_input_widget()
 
+    # Process the user's input from the widget
     if user_input:
         if "text" in user_input:
             user_text =user_input["text"]
@@ -116,7 +117,7 @@ def app():
             st.audio(audio_bytes)
 
 if __name__ == "__main__":
-    app()
+    main()
 ```
 
 ### CSS Customization
