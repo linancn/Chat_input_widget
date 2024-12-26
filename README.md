@@ -46,7 +46,15 @@ If you want to modify or rebuild the React component, you can find the source co
 4. **Run the component locally** (for development):
    ```bash
    npm start
+
    ```
+
+### Step 3: Publish the Package
+```bash
+pip install twine setuptools
+python setup.py sdist bdist_wheel
+twine upload dist/*
+```
 
 ### Usage
 
