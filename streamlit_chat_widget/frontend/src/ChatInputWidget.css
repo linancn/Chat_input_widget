@@ -18,7 +18,7 @@ body {
     align-items: center;
     box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
     width: 90%;
-    max-width: 600px;
+    max-width: 1000px;
     position: fixed; /* Ensure it's fixed at the bottom */
     bottom: 10px;
     left: 50%;
@@ -53,7 +53,7 @@ body {
 
 /* Button styles with gradient and shadow effects */
 .icon-btn {
-    background: linear-gradient(145deg, #00B0F0, #00D4FF);
+    background: linear-gradient(145deg, #82318E, #A052D1);
     border: none;
     border-radius: 50%;
     color: white;
